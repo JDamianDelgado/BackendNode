@@ -264,9 +264,3 @@ Curso: Diplomatura Full Stack
 Unidad: Desarrollo con NodeJS
 
 Fecha: Febrero 2026
-
-## Capturas
-
-### Pantalla Responsive
-
-![alt yes]()
