@@ -16,8 +16,13 @@ app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/messages", messagesRoutes);
-
+app.use("/", (req, res) =>
+  res.status(404).json({ error: "Bienvenido a API REST para chat" }),
+);
 // LISTEN
-app.listen(DICCIONARIO_VAR.PORT, () => {
-  console.log(`Servidor conectado a ${DICCIONARIO_VAR.PORT}`);
-});
+if (process.env.NODE_ENV !== "production") {
+  app.listen(DICCIONARIO_VAR.PORT, () => {
+    console.log(`Servidor conectado a ${DICCIONARIO_VAR.PORT}`);
+  });
+}
+export default app;
