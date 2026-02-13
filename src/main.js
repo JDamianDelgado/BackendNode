@@ -6,6 +6,7 @@ import { DICCIONARIO_VAR } from "./config/diccionarioVariables.js";
 import authRoutes from "./Routes/authRoutes.js";
 import conexionBDD from "./config/conexionBDD.js";
 import { requestSolicitud } from "./middleware/requestSolicitud.js";
+import endpointRoutes from "./Routes/Endpoints.js";
 
 conexionBDD();
 const app = express();
@@ -16,9 +17,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/messages", messagesRoutes);
-app.use("/", (req, res) =>
-  res.status(404).json({ error: "Bienvenido a API REST para chat" }),
-);
+app.use("/", endpointRoutes);
 // LISTEN
 if (process.env.NODE_ENV !== "production") {
   app.listen(DICCIONARIO_VAR.PORT, () => {

@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "builds": [{ "src": "src/main.js", "use": "@vercel/node" }],
-  "routes": [
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "/src/main.js"
+      "source": "/(.*)",
+      "destination": "/src/main.js"
     }
   ]
 }

@@ -1,3 +1,5 @@
+import express from "express";
+
 const endpointRoutes = express.Router();
 
 export default endpointRoutes;

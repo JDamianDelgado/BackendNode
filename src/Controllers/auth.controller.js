@@ -69,9 +69,7 @@ export async function login(req, res) {
       ok: true,
       status: 200,
       message: "Login exitoso",
-      data: {
-        auth_token,
-      },
+      token: auth_token,
     });
   } catch (error) {
     if (error.status) {
