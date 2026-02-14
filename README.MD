@@ -21,7 +21,7 @@ Incluye:
 - MongoDB Atlas
 - JWT (JsonWebToken)
 
-Finalmente, el proyecto fue **desplegado en la plataforma Vercel**, permitiendo su acceso y acceso en línea.
+Finalmente, el proyecto fue **desplegado en la plataforma Railway**, permitiendo su acceso en línea.
 
 ---
 
@@ -46,6 +46,7 @@ npm install
 PORT= *****
 MONGO_DB_CONNECTION_STRING= *******
 JWT_SECRET = *******
+NODE_ENV=production
 ```
 
 4. Ejecutar el Proyecto
@@ -56,7 +57,11 @@ npm run dev
 
 El proyecto debe correr localmente en 'http://localhost:8080' por defecto
 
-Desplegado en : [Vercel](https://backend-node-murex.vercel.app/)
+Desplegado en :
+
+<!-- - [Vercel](https://backend-node-murex.vercel.app/) -->
+
+- [RailWay](https://backendnode-production-478d.up.railway.app)
 
 ## Rutas
 
@@ -104,6 +109,15 @@ Base: `/api/users`
 | POST   | `/api/users/delete/:id` | Eliminar usuario por ID    |
 
 ---
+
+Usuarios de prueba :
+
+```json
+{
+  "email": "examples12@mail.com",
+  "password": "123"
+}
+```
 
 # 💬 CHAT (🔒 Requiere Token)
 
@@ -203,7 +217,7 @@ Authorization: Bearer TOKEN
 ## 1️⃣ Login y guardar token
 
 ```javascript
-const response = await fetch("http://localhost:3000/api/auth/login", {
+const response = await fetch("http:.../api/auth/login", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
@@ -221,7 +235,7 @@ localStorage.setItem("token", data.token);
 ```javascript
 const token = localStorage.getItem("token");
 
-const response = await fetch("http://localhost:3000/api/chat/", {
+const response = await fetch("http:.../api/chat/", {
   headers: {
     Authorization: `Bearer ${token}`,
   },
