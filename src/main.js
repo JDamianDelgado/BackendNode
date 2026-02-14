@@ -19,9 +19,9 @@ app.use("/api/chat", chatRoutes);
 app.use("/api/messages", messagesRoutes);
 app.use("/", endpointRoutes);
 // LISTEN
-if (process.env.NODE_ENV !== "production") {
-  app.listen(DICCIONARIO_VAR.PORT, () => {
-    console.log(`Servidor conectado a ${DICCIONARIO_VAR.PORT}`);
-  });
-}
+const PORT = DICCIONARIO_VAR.PORT || 8080;
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Servidor corriendo en puerto ${PORT}`);
+});
+
 export default app;
