@@ -31,3 +31,8 @@ endpointRoutes.get("/", (req, res) => {
     },
   });
 });
+endpointRoutes.get("/test", (req, res) => {
+  res.status(200).json({
+    message: "Test a rutas funcionando",
+  });
+});
